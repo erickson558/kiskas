@@ -1,0 +1,2 @@
+# La aplicación usa únicamente la biblioteca estándar: tkinter, secrets, csv, etc.
+# Python 3.12+ para ejecutar el código; el .exe incluye Python y Tcl/Tk.

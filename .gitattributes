@@ -1,0 +1,4 @@
+# Mantiene finales de línea iguales en Windows y GitHub Actions.
+* text=auto eol=lf
+*.ico binary
+*.exe binary
