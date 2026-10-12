@@ -12,8 +12,8 @@ Esta lista es de aceptación; las casillas solo se completan cuando existe evide
 - [x] Comparar el hash de `kiskas.exe` con `SHA256SUMS.txt`.
 - [x] Revisar dependencias fijadas, exclusiones de Git, permisos y workflow.
 - [x] Validar las tres skills y su integración en `AGENTS.md`.
-- [ ] Crear primer commit en `main` y repositorio público bajo la cuenta autorizada.
-- [ ] Verificar ejecución del workflow y release V1.0.0 con los dos artefactos.
+- [x] Crear primer commit en `main` y repositorio público bajo la cuenta autorizada.
+- [x] Verificar ejecución del workflow y release V1.0.0 con ejecutable, checksum y entrega completa.
 
 ## Registro de evidencia
 
@@ -26,4 +26,6 @@ Completar con comando, resultado y limitaciones después de cada verificación. 
 | Build y apertura del ejecutable | `python scripts/build.py` y `python scripts/verify_exe.py` correctos. Versión V1.0.0 en propiedades Windows; subsistema PE 2 (GUI sin consola). |
 | SHA-256 | El hash del archivo compilado coincide con `SHA256SUMS.txt`; cada compilación local o remota tiene su propio hash. |
 | Skills | Las tres skills pasan `quick_validate.py` de skill-creator con Python 3.12; `AGENTS.md` enlaza sus archivos locales. |
-| GitHub y release | Pendiente de publicación y verificación. |
+| GitHub y release | Repositorio público `erickson558/kiskas`, rama main. Commit inicial `4df80f8`; tag V1.0.0 apunta a ese commit. [Actions 38245969794](https://github.com/erickson558/kiskas/actions/runs/38245969794) terminó con éxito y [release V1.0.0](https://github.com/erickson558/kiskas/releases/tag/V1.0.0) publicada con kiskas.exe, SHA256SUMS.txt y ENTREGA.md. |
+
+La siguiente versión patch incorpora esta evidencia y documenta la selección de credencial por cuenta. La publicación inicial fue verificada antes de registrar las casillas completadas; el resultado de cada release posterior se consulta en GitHub Actions.

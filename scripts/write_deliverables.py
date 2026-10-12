@@ -11,10 +11,10 @@ from version import VERSION_LABEL  # noqa: E402
 def main() -> None:
     # Es un artefacto generado; los documentos originales se mantienen en Git.
     files = (
-        "README.md", "requirements.txt", "requirements-build.txt", "LICENSE", "VERSION",
+        "README.md", "CHANGELOG.md", "requirements.txt", "requirements-build.txt", "LICENSE", "VERSION",
         "version.py", ".github/workflows/release.yml", ".gitignore", ".gitattributes",
         "scripts/build.py", "scripts/bump_version.py", "scripts/smoke_gui.py",
-        "scripts/verify_exe.py", "AGENTS.md", ".agents/skills/kiskas-sdd/SKILL.md",
+        "scripts/verify_exe.py", "scripts/write_deliverables.py", "AGENTS.md", ".agents/skills/kiskas-sdd/SKILL.md",
         ".agents/skills/kiskas-release/SKILL.md", ".agents/skills/kiskas-comentarios/SKILL.md",
         "docs/spec.md", "docs/plan.md", "docs/tasks.md", "docs/security.md",
         "kiskas.py", "kiskas_core.py", "tests/test_core.py", "tests/test_versioning.py",
@@ -29,7 +29,7 @@ def main() -> None:
               f"La versión actual es {VERSION_LABEL}; VERSION contiene SemVer sin la V. El primer commit usa V1.0.0. Incrementar patch para correcciones o documentación relevante, minor para funciones compatibles y major para incompatibilidades. Cada commit relevante actualiza versión y changelog antes del push. scripts/bump_version.py sincroniza los documentos; la aplicación, metadata del exe, tag y release leen la misma versión. GitHub rechaza una revisión que intente reutilizar un tag.\n\n",
               "## 3. Archivos creados\n\n",
               "\n".join(f"- `{name}`" for name in files),
-              "\n\nTambién se conserva Download_26386.ico y se incluye docs/COMANDOS.md, scripts/write_deliverables.py y el entorno de build local excluido de Git.\n\n",
+              "\n\nTambién se conserva Download_26386.ico y se incluye docs/COMANDOS.md y el entorno de build local excluido de Git.\n\n",
               "## 4. Contenido completo de los archivos\n\n"]
     for name in files:
         suffix = Path(name).suffix

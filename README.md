@@ -1,6 +1,6 @@
 # kiskas
 
-Versión: **V1.0.0**
+Versión: **V1.0.1**
 
 Aplicación de escritorio en Python para analizar muestras de códigos y generar combinaciones con la misma estructura configurable. Incluye interfaz en español e inglés y un ejecutable para Windows.
 
@@ -32,7 +32,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe kiskas.py
 ```
 
-No necesitas activar el entorno virtual para estos comandos. Para el ejecutable, descarga `kiskas.exe` de una release publicada y ábrelo. `SHA256SUMS.txt` permite comparar su SHA-256 con `Get-FileHash .\kiskas.exe -Algorithm SHA256`.
+No necesitas activar el entorno virtual para estos comandos. Para el ejecutable, descarga `kiskas.exe` de [la última release](https://github.com/erickson558/kiskas/releases/latest) y ábrelo. `SHA256SUMS.txt` permite comparar su SHA-256 con `Get-FileHash .\kiskas.exe -Algorithm SHA256`.
 
 ## Uso
 
@@ -55,9 +55,11 @@ Los archivos exportados se guardan en la ruta que el usuario selecciona. La apli
 
 El build utiliza `Download_26386.ico`, empaqueta en un único archivo sin consola y produce `kiskas.exe` y `SHA256SUMS.txt` en la raíz, junto a `kiskas.py`. Consulta los pasos y comandos de publicación en [docs/COMANDOS.md](docs/COMANDOS.md).
 
+También genera `ENTREGA.md`, un documento con análisis, versionado, lista de archivos, contenido completo, comandos y compilación en el orden solicitado. Se publica como adjunto de cada release; su fuente es `scripts/write_deliverables.py` y los documentos originales. Los archivos generados se excluyen de Git.
+
 ## Versionado y releases
 
-`VERSION`, con contenido `1.0.0`, es la fuente única de versión. `version.py` proporciona su representación `V1.0.0` a la aplicación y al build; README, changelog, tag y release deben corresponder a esa versión. El binario conserva el nombre `kiskas.exe`; sus metadatos y la release identifican la versión.
+`VERSION`, con contenido `major.minor.patch`, es la fuente única de versión. `version.py` proporciona su representación `Vx.y.z` a la aplicación y al build; README, changelog, tag y release deben corresponder a esa versión. El binario conserva el nombre `kiskas.exe`; sus metadatos y la release identifican la versión.
 
 Cada commit relevante que llegue a `main` debe aumentar la versión antes del push:
 

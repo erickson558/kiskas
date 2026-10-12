@@ -1,5 +1,9 @@
 # Changelog
 
+## V1.0.1
+
+- Registrar la verificacion de la release inicial y documentar credenciales por cuenta
+
 Los cambios relevantes se registran por versión. Se utiliza SemVer y el prefijo `V` en la aplicación, los tags y las releases.
 
 ## V1.0.0 - 2026-10-12

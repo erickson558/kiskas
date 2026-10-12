@@ -26,11 +26,14 @@ Inspecciona primero el estado local y la cuenta. No sobrescribas un remoto exist
 ```powershell
 gh auth status
 gh auth switch --user erickson558
+$env:GH_TOKEN = gh auth token --hostname github.com --user erickson558
 gh api user --jq .login
 git status
 git remote -v
 gh repo view erickson558/kiskas
 ```
+
+La asignación mantiene la credencial únicamente en memoria del proceso de PowerShell y evita que otra credencial de entorno prevalezca sobre la cuenta seleccionada. No imprimas `$env:GH_TOKEN`, no lo guardes en archivos y comprueba que `gh api user` devuelva `erickson558`.
 
 Si aún no hay repositorio Git, inicialízalo. El error de `git status` fuera de un repositorio no es un motivo para borrar archivos:
 
@@ -53,6 +56,8 @@ Si `erickson558/kiskas` no existe y su creación está autorizada:
 gh repo create erickson558/kiskas --public --source . --remote origin --description "Generador y analizador de patrones de códigos con GUI bilingüe en Python"
 git push -u origin main
 ```
+
+Si la creación responde con timeout, consulta `gh repo view erickson558/kiskas` antes de reintentar: GitHub puede haber creado el repositorio aunque no haya llegado la respuesta. Si ya existe vacío, añade `origin` solo si falta y publica `main`.
 
 Si el repositorio existe y corresponde a este proyecto, añade `origin` solo si no está configurado:
 

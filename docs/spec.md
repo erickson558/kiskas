@@ -48,6 +48,8 @@ La compilación usa PyInstaller fijado en `requirements-build.txt`, modo onefile
 
 Repositorio público solicitado: `erickson558/kiskas`, rama `main`, licencia Apache 2.0. El workflow se activa por cada push a `main`, ejecuta pruebas, compila y publica el tag/release `Vx.y.z` con ambos artefactos. Una revisión nueva no reutiliza un tag existente. No se guardan tokens en archivos.
 
+El tercer adjunto `ENTREGA.md` se genera desde los archivos reales de la versión y contiene los seis apartados de entrega solicitados, incluyendo archivos completos y comandos. El documento se genera junto al ejecutable y se excluye del historial para evitar copias divergentes de los archivos mantenidos.
+
 ## Versionado y mantenimiento
 
 `VERSION` almacena exclusivamente SemVer sin prefijo. Cada commit relevante aumenta major, minor o patch con el script correspondiente y actualiza README y changelog. Para el primer commit se usa V1.0.0. Cambios funcionales posteriores actualizan esta especificación, el plan y las tareas; comentarios explican decisiones y bloques significativos en español.
